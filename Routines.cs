@@ -6,6 +6,7 @@ using UnityEngine;
 public class Routine 
 {
     public Coroutine coroutine;
+    public MonoBehaviour monoBehaviour;
 }
 
 public class Routines : MonoBehaviour
@@ -13,14 +14,14 @@ public class Routines : MonoBehaviour
     public void DoAfter() 
     {
     }
-    public void StartCraftCoroutine(Routine _craftCoroutine) 
+    public void StartRoutine(Routine _routine) 
     {
-        if (_craftCoroutine.coroutine != null) 
+        if (_routine.coroutine != null) 
         {
-            StopCoroutine(_craftCoroutine.coroutine);
-            _craftCoroutine.coroutine = null;
+            StopCoroutine(_routine.coroutine);
+            _routine.coroutine = null;
         }
-        // _craftCoroutine.coroutine = StartCoroutine();
+        // _routine.coroutine = _routine.monoBehaviour.StartCoroutine(_routine.coroutine);
     }
 }
 
